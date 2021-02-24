@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
           text-decoration: none;
         `}
       >
-        Todos
+        Todos!
       </Link>
       <Link
         to="wotd"
