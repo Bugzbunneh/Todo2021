@@ -7,11 +7,7 @@ describe('Add Todo', () => {
 
     cy.contains('Sign in').click();
 
-    // cy.clearLocalStorage() ?
-    // cy.wait(1000) ?
-    // cy.clearCookie()   cy.getCookies().should('be.empty')
     cy.url().should('include', 'auth0');
-
     cy.findByLabelText('Email')
       .type('todoCypressTestEmail1@hotmail.com')
       .should('have.value', 'todoCypressTestEmail1@hotmail.com');
@@ -26,7 +22,7 @@ describe('Add Todo', () => {
 
     var title = 'Cypress Title 1';
     var description = 'Cypress Description 1';
-    var deadline = '2021-02-23';
+    var deadline = '2051-02-23';
     cy.findByLabelText('Title').type(title).should('have.value', title);
     cy.findByLabelText('Description')
       .type(description)
