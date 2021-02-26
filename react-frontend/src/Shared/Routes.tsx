@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { TodoLandingPage } from 'Pages/Todo/TodoLandingPage';
 import { NotFoundPage } from 'Pages/NotFound/NotFoundPage';
-import { WordOfTheDayPage } from 'Pages/WordOfTheDay/WordOfTheDayPage';
 import { SignInPage } from 'Pages/SignIn/SignInPage';
 import { SignOutPage } from 'Pages/SignOut/SignOutPage';
 import { AuthorizedPage } from './AuthorizedPage';
@@ -35,7 +34,6 @@ export const AppRoutes: React.FC = () => {
           </AuthorizedPage>
         }
       />
-      <Route path="wotd" element={<WordOfTheDayPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
