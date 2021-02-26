@@ -125,6 +125,25 @@ export const SecondaryButton = styled.button`
   }
 `;
 
+export const linkStyle = css`
+  font-family: ${fontFamily};
+  font-size: ${fontSize};
+  padding: 5px 10px;
+  background-color: transparent;
+  color: ${gray2};
+  text-decoration: none;
+  cursor: pointer;
+  :focus {
+    outline-color: ${gray5};
+  }
+  :hover {
+    background-color: ${gray4};
+  }
+  :active {
+    background-color: ${gray3};
+  }
+`;
+
 export const Fieldset = styled.fieldset`
   width: inherit;
   background-color: ${black2};
