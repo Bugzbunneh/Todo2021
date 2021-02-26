@@ -135,7 +135,7 @@ export const AddTodoForm: React.FC = () => {
               name="dateDeadline"
               type="date"
               ref={register({
-                validate: (value) => new Date(value) >= new Date(),
+                validate: (value) => new Date(value) > new Date(),
               })}
             />
           </div>
@@ -174,7 +174,7 @@ export const AddTodoForm: React.FC = () => {
             `}
           >
             {errors.dateDeadline && errors.dateDeadline.type === 'validate' && (
-              <FieldError>*The deadline cannot be in the past</FieldError>
+              <FieldError>*The deadline must be after today</FieldError>
             )}
           </div>
           <div
