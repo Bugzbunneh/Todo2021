@@ -2,7 +2,9 @@
 import { css } from '@emotion/react';
 import { useAuth } from 'Api/Auth';
 import { Link } from 'react-router-dom';
-import { lilac1 } from './Styles';
+import { UserIcon } from './Icons';
+import { SideNav } from './SideNav';
+import { gray5, linkStyle } from './Styles';
 
 export const Header: React.FC = () => {
   const { isAuthenticated, loading } = useAuth();
@@ -11,48 +13,39 @@ export const Header: React.FC = () => {
     <div
       css={css`
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        align-items: center;
         padding: 1%;
-        background-color: ${lilac1};
+        background-color: ${gray5};
         box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16);
       `}
     >
-      <span>Environment: {process.env.REACT_APP_ENV || 'dev'}</span>
-      <Link
-        to="todo"
-        css={css`
-          text-decoration: none;
-        `}
-      >
-        Todos
-      </Link>
-      <Link
-        to="wotd"
-        css={css`
-          text-decoration: none;
-        `}
-      >
-        Word of the Day
-      </Link>
+      <SideNav />
+      <div>App name</div>
+
       {!loading &&
         (isAuthenticated ? (
-          <Link
-            to="signout"
-            css={css`
-              text-decoration: none;
-            `}
-          >
-            Sign Out
-          </Link>
+          <div>
+            <Link
+              to="signout"
+              css={css`
+                ${linkStyle}
+                span {
+                  margin-left: 7px;
+                }
+              `}
+            >
+              <UserIcon />
+              <span>Sign Out</span>
+            </Link>
+          </div>
         ) : (
-          <Link
-            to="signin"
-            css={css`
-              text-decoration: none;
-            `}
-          >
-            Sign in
-          </Link>
+          <div>
+            <Link to="signin" css={linkStyle}>
+              <UserIcon />
+              <span>Sign In</span>
+            </Link>
+          </div>
         ))}
     </div>
   );

@@ -5,7 +5,7 @@ describe('Add Todo', () => {
   it('When signed in and add valid todo, the todo should successfully save', () => {
     cy.contains('You do not have access to this page');
 
-    cy.contains('Sign in').click();
+    cy.contains('Sign In').click();
 
     cy.url().should('include', 'auth0');
     cy.findByLabelText('Email')
